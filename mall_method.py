@@ -17,3 +17,7 @@ class method ():
     # 获取元素文本内容
     def get_text(self, type, value):
         return self.dr.find_element(type, value).text
+
+    # 获取class
+    def get_class(self, type, value):
+        return self.dr.find_element(type, value).get_attribute("class")
