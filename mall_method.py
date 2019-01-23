@@ -22,3 +22,15 @@ class method ():
     # 获取class
     def get_class(self, type, value):
         return self.dr.find_element(type, value).get_attribute("class")
+
+    # 通过获取元素文本内容定位元素
+    # "//*[text()='XXBB']"
+    def get_content(self, type, value):
+        a = " \"//*[text()=\' " + value + " \')]\" "
+        return self.dr.find_element(type, a).click()
+    
+    # 通过获取元素部分文本内容定位元素
+    # "//*[contains(text(),'XXB')]"
+    def get_contents(self, type, value):
+        a = " \"//*[contains(text(),\' " + value + " \')]\" "
+        return self.dr.find_element(type, a).click()

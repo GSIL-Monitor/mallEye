@@ -12,13 +12,14 @@
     
     
 <style type="text/css" media="screen">
-    body        { font-family: Microsoft YaHei,Consolas,arial,sans-serif; font-size: 80%; }
+    body        { font-family: Microsoft YaHei,Consolas,arial,sans-serif; font-size: 20px; }
     table       { font-size: 100%; }
     pre         { white-space: pre-wrap;word-wrap: break-word; }
     /* -- heading ---------------------------------------------------------------------- */
     h1 {
         font-size: 16pt;
-        color: gray;
+        color: #ff0303;
+        font-weight:bold;
     }
     .heading {
         margin-top: 0ex;
@@ -37,6 +38,9 @@
     }
     a.popup_link:hover {
         color: red;
+    }
+    #chart{
+        left:-25%;
     }
     .popup_window {
         display: none;
@@ -181,9 +185,9 @@
         
     <div class='page-header'>
         <h1>mall眼自动化测试报告</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2019-01-21 18:15:33</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:41.032737</p>
-<p class='attribute'><strong>状态:</strong> 通过 10 错误 3</p>
+    <p class='attribute'><strong>开始时间:</strong> 2019-01-22 17:47:08</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:33.718697</p>
+<p class='attribute'><strong>状态:</strong> 通过 11 错误 1</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'>用例执行情况：</p></div>
@@ -214,13 +218,13 @@
             <td>查看</td>
         </tr>
         
-    <tr class='errorClass'>
+    <tr class='passClass'>
         <td>test01_login.login</td>
-        <td>6</td>
-        <td>3</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
-        <td>3</td>
-        <td><a href="javascript:showClassDetail('c1',6)">详情</a></td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c1',4)">详情</a></td>
     </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
@@ -233,130 +237,47 @@
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-<tr id='ft1.3' class='none'>
-    <td class='errorCase'><div class='testcase'>test_03: 退出登录</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
-        错误</a>
-    <div id='div_ft1.3' class="popup_window">
-        <pre>ft1.3: Traceback (most recent call last):
-  File "F:\mall\test01_login.py", line 58, in test_03
-    'xpath', '//*[@id="app"]/div[1]/div[3]/span[3]')
-  File "F:\mall\mall_method.py", line 11, in click_element
-    self.dr.find_element(type, value).click()
-  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div[1]/div[3]/span[3]"}
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.10240 x86_64)
-
-</pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-</tr>
-
-<tr id='pt1.4' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_04: 邮箱登录</div></td>
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_03: 退出登录</div></td>
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-<tr id='ft1.5' class='none'>
-    <td class='errorCase'><div class='testcase'>test_05: 手机号登录</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
-        错误</a>
-    <div id='div_ft1.5' class="popup_window">
-        <pre>ft1.5: Traceback (most recent call last):
-  File "F:\mall\test01_login.py", line 86, in test_05
-    "xpath", "//*[@id='login']/div[2]/div[2]/div[2]/div/input", "14700000000")
-  File "F:\mall\mall_method.py", line 15, in input
-    self.dr.find_element(type, value1).click()
-  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
-  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.WebDriverException: Message: unknown error: Element &lt;input type="text" autocomplete="off" class="el-input__inner"&gt; is not clickable at point (1238, 417). Other element would receive the click: &lt;div class="el-loading-mask is-fullscreen el-loading-fade-leave-active el-loading-fade-leave-to" style="z-index: 2000;"&gt;...&lt;/div&gt;
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.10240 x86_64)
-
-</pre>
-    </div>
-    <!--css div popup end-->
-    </td>
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_04: 手机号登录</div></td>
+    <td colspan='5' align='center'>通过</td>
 </tr>
 
-<tr id='ft1.6' class='none'>
-    <td class='errorCase'><div class='testcase'>test_06: 昵称登录</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.6')" >
-        错误</a>
-    <div id='div_ft1.6' class="popup_window">
-        <pre>ft1.6: Traceback (most recent call last):
-  File "F:\mall\test01_login.py", line 107, in test_06
-    "xpath", "//*[@id='login']/div[2]/div[2]/div[2]/div/input", "wsmall_679732130")
-  File "F:\mall\mall_method.py", line 15, in input
-    self.dr.find_element(type, value1).click()
-  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
-  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.WebDriverException: Message: unknown error: Element &lt;input type="text" autocomplete="off" class="el-input__inner"&gt; is not clickable at point (1238, 417). Other element would receive the click: &lt;div class="el-loading-mask is-fullscreen el-loading-fade-leave-active el-loading-fade-leave-to" style="z-index: 2000;"&gt;...&lt;/div&gt;
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.10240 x86_64)
-
-</pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-</tr>
-
-    <tr class='passClass'>
+    <tr class='errorClass'>
         <td>test02_home.home</td>
-        <td>7</td>
+        <td>8</td>
         <td>7</td>
         <td>0</td>
-        <td>0</td>
-        <td><a href="javascript:showClassDetail('c2',7)">详情</a></td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c2',8)">详情</a></td>
     </tr>
 
 <tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_01: 登录</div></td>
+    <td class='none'><div class='testcase'>test_01: 邮箱登录</div></td>
     <td colspan='5' align='center'>通过</td>
 </tr>
 
 <tr id='pt2.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_02: 验证日期是否是为两天前日期</div></td>
+    <td class='none'><div class='testcase'>test_02: 日报：验证日期是否是为两天前日期</div></td>
     <td colspan='5' align='center'>通过</td>
 </tr>
 
 <tr id='pt2.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_03: 验证主项目和对比项数据不为0</div></td>
+    <td class='none'><div class='testcase'>test_03: 日报：验证主项目和对比项数据不为0</div></td>
     <td colspan='5' align='center'>通过</td>
 </tr>
 
 <tr id='pt2.4' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_04: 判断日消费基础画像数据不为0</div></td>
+    <td class='none'><div class='testcase'>test_04: 日报：判断日消费基础画像数据不为0</div></td>
     <td colspan='5' align='center'>通过</td>
 </tr>
 
 <tr id='pt2.5' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_05: 点击基础画像【查看详情】判断跳转页面和tab选中状态</div></td>
+    <td class='none'><div class='testcase'>test_05: 日报：点击基础画像【查看详情】跳转页面和tab选中状态验证</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.5')" >
@@ -367,7 +288,7 @@ selenium.common.exceptions.WebDriverException: Message: unknown error: Element &
 + MALL眼--数据报告
 
 Error:消费者画像页title错误
-'menu_two_active' != &lt;selenium.webdriver.remote.webelement.Web[82 chars]14")&gt;
+'menu_two_active' != &lt;selenium.webdriver.remote.webelement.Web[81 chars]14")&gt;
 Error:导航客流画像分析或消费者画像选中状态错误
 </pre>
     </div>
@@ -376,21 +297,51 @@ Error:导航客流画像分析或消费者画像选中状态错误
 </tr>
 
 <tr id='pt2.6' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_06: 点击来源工作地top5【查看详情】判断跳转页面元素正确性</div></td>
-    <td colspan='5' align='center'>通过</td>
+    <td class='none'><div class='testcase'>test_06: 日报：点击来源工作地top5【查看详情】跳转页面验证</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.6')" >
+        通过</a>
+    <div id='div_pt2.6' class="popup_window">
+        <pre>pt2.6: 'MALL--消费者来源地' != 'MALL眼--数据报告'
+- MALL--消费者来源地
++ MALL眼--数据报告
+
+Error:消费者来源地页title错误
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
 </tr>
 
 <tr id='pt2.7' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_07: 判断来源工作/居住地有无数据显示</div></td>
+    <td class='none'><div class='testcase'>test_07: 切换周报：验证主项目和对比项数据不为0</div></td>
     <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='ft2.8' class='none'>
+    <td class='errorCase'><div class='testcase'>test_08: 周报：验证主项目天气信息不为空</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.8')" >
+        错误</a>
+    <div id='div_ft2.8' class="popup_window">
+        <pre>ft2.8: Traceback (most recent call last):
+  File "F:\mall\test02_home.py", line 152, in test_08
+    if w&lt;0 or w&gt;0 or w==0:
+TypeError: '&lt;' not supported between instances of 'str' and 'int'
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
 </tr>
 
         <tr id='total_row'>
             <td>总计</td>
-            <td>13</td>
-            <td>10</td>
+            <td>12</td>
+            <td>11</td>
             <td>0</td>
-            <td>3</td>
+            <td>1</td>
             <td>&nbsp;</td>
         </tr>
     </table>
@@ -423,9 +374,9 @@ Error:导航客流画像分析或消费者画像选中状态错误
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:10, name:'通过'},
+                        {value:11, name:'通过'},
                         {value:0, name:'失败'},
-                        {value:3, name:'错误'}
+                        {value:1, name:'错误'}
                     ],
                     itemStyle: {
                         emphasis: {

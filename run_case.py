@@ -26,7 +26,7 @@ def send_mail():
     password = "YZF@dd9587"
 
     sender = 'yuanzhifan@winshang.com'
-    receivers = ['yuanzhifan@winshang.com']
+    receivers = ['yuanzhifan@winshang.com', 'hexiaojuan@winshang.com']
 
     subject = 'mall眼自动化报告邮件'
     content = '<html><h3 style="color:red"></h3></html>'
