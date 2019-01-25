@@ -12,7 +12,7 @@
     
     
 <style type="text/css" media="screen">
-    body        { font-family: Microsoft YaHei,Consolas,arial,sans-serif; font-size: 20px; }
+    body        { font-family: Microsoft YaHei,Consolas,arial,sans-serif; font-size: 18px; }
     table       { font-size: 100%; }
     pre         { white-space: pre-wrap;word-wrap: break-word; }
     /* -- heading ---------------------------------------------------------------------- */
@@ -185,9 +185,9 @@
         
     <div class='page-header'>
         <h1>mall眼自动化测试报告</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2019-01-22 17:47:08</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:33.718697</p>
-<p class='attribute'><strong>状态:</strong> 通过 11 错误 1</p>
+    <p class='attribute'><strong>开始时间:</strong> 2019-01-25 17:33:53</p>
+<p class='attribute'><strong>运行时长:</strong> 0:01:01.061472</p>
+<p class='attribute'><strong>状态:</strong> 通过 15 失败 1 错误 2</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'>用例执行情况：</p></div>
@@ -218,11 +218,11 @@
             <td>查看</td>
         </tr>
         
-    <tr class='passClass'>
+    <tr class='failClass'>
         <td>test01_login.login</td>
         <td>4</td>
-        <td>4</td>
-        <td>0</td>
+        <td>3</td>
+        <td>1</td>
         <td>0</td>
         <td><a href="javascript:showClassDetail('c1',4)">详情</a></td>
     </tr>
@@ -232,9 +232,25 @@
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-<tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_02: 用户名登录</div></td>
-    <td colspan='5' align='center'>通过</td>
+<tr id='ft1.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_02: 用户名登录</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        失败</a>
+    <div id='div_ft1.2' class="popup_window">
+        <pre>ft1.2: Traceback (most recent call last):
+  File "F:\mall\test01_login.py", line 42, in test_02
+    self.assertEqual('wsmall_67973213', name)
+AssertionError: 'wsmall_67973213' != 'wsmall_679732130'
+- wsmall_67973213
++ wsmall_679732130
+?                +
+
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
 </tr>
 
 <tr id='pt1.3' class='hiddenRow'>
@@ -249,11 +265,11 @@
 
     <tr class='errorClass'>
         <td>test02_home.home</td>
-        <td>8</td>
-        <td>7</td>
+        <td>12</td>
+        <td>11</td>
         <td>0</td>
         <td>1</td>
-        <td><a href="javascript:showClassDetail('c2',8)">详情</a></td>
+        <td><a href="javascript:showClassDetail('c2',12)">详情</a></td>
     </tr>
 
 <tr id='pt2.1' class='hiddenRow'>
@@ -278,40 +294,12 @@
 
 <tr id='pt2.5' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_05: 日报：点击基础画像【查看详情】跳转页面和tab选中状态验证</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.5')" >
-        通过</a>
-    <div id='div_pt2.5' class="popup_window">
-        <pre>pt2.5: 'MALL--消费者画像' != 'MALL眼--数据报告'
-- MALL--消费者画像
-+ MALL眼--数据报告
-
-Error:消费者画像页title错误
-'menu_two_active' != &lt;selenium.webdriver.remote.webelement.Web[81 chars]14")&gt;
-Error:导航客流画像分析或消费者画像选中状态错误
-</pre>
-    </div>
-    <!--css div popup end-->
-    </td>
+    <td colspan='5' align='center'>通过</td>
 </tr>
 
 <tr id='pt2.6' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_06: 日报：点击来源工作地top5【查看详情】跳转页面验证</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.6')" >
-        通过</a>
-    <div id='div_pt2.6' class="popup_window">
-        <pre>pt2.6: 'MALL--消费者来源地' != 'MALL眼--数据报告'
-- MALL--消费者来源地
-+ MALL眼--数据报告
-
-Error:消费者来源地页title错误
-</pre>
-    </div>
-    <!--css div popup end-->
-    </td>
+    <td colspan='5' align='center'>通过</td>
 </tr>
 
 <tr id='pt2.7' class='hiddenRow'>
@@ -327,9 +315,93 @@ Error:消费者来源地页title错误
         错误</a>
     <div id='div_ft2.8' class="popup_window">
         <pre>ft2.8: Traceback (most recent call last):
-  File "F:\mall\test02_home.py", line 152, in test_08
-    if w&lt;0 or w&gt;0 or w==0:
-TypeError: '&lt;' not supported between instances of 'str' and 'int'
+  File "F:\mall\test02_home.py", line 133, in test_08
+    w = int(weathers)
+ValueError: invalid literal for int() with base 10: ''
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt2.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_09: 周报：判断日消费基础画像数据不为0</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt2.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_10: 切换月报：验证主项目和对比项数据不为0</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt2.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_11: 月报：判断日消费基础画像数据不为0</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt2.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_12: 验证未来五天天气</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.12')" >
+        通过</a>
+    <div id='div_pt2.12' class="popup_window">
+        <pre>pt2.12: 今日天气显示正常:13~22℃
+第2天温度显示正常:14~24℃
+第3天温度显示正常:14~21℃
+第4天温度显示正常:12~20℃
+第5天温度显示正常:16~21℃
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+    <tr class='errorClass'>
+        <td>test03_Portrait_consumers.home</td>
+        <td>2</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c3',2)">详情</a></td>
+    </tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_01: 进入客流画像分析->客流趋势分析页</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        错误</a>
+    <div id='div_ft3.1' class="popup_window">
+        <pre>ft3.1: Traceback (most recent call last):
+  File "F:\mall\test03_Portrait_consumers.py", line 35, in test_01
+    self.main.get_content_click('xpath', '客流画像分析')
+  File "F:\mall\mall_method.py", line 29, in get_content_click
+    self.dr.find_element(type, content).click()
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),"客流画像分析")]"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.10240 x86_64)
+
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_02: 验证基础画像显示加载成功</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        通过</a>
+    <div id='div_pt3.2' class="popup_window">
+        <pre>pt3.2: 
 </pre>
     </div>
     <!--css div popup end-->
@@ -338,10 +410,10 @@ TypeError: '&lt;' not supported between instances of 'str' and 'int'
 
         <tr id='total_row'>
             <td>总计</td>
-            <td>12</td>
-            <td>11</td>
-            <td>0</td>
+            <td>18</td>
+            <td>15</td>
             <td>1</td>
+            <td>2</td>
             <td>&nbsp;</td>
         </tr>
     </table>
@@ -374,9 +446,9 @@ TypeError: '&lt;' not supported between instances of 'str' and 'int'
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:11, name:'通过'},
-                        {value:0, name:'失败'},
-                        {value:1, name:'错误'}
+                        {value:15, name:'通过'},
+                        {value:1, name:'失败'},
+                        {value:2, name:'错误'}
                     ],
                     itemStyle: {
                         emphasis: {

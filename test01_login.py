@@ -23,11 +23,8 @@ class login(unittest.TestCase):
     def test_01(self):
         '''查看登录页资讯电话显示'''
         tel = self.main.get_text('xpath', '//*[@id="login"]/div[1]/div[2]')
-        try:
-            self.assertEqual('咨询电话：020-37128297', tel)
-        except AssertionError as e:
-            print(e)
-
+        self.assertEqual('咨询电话：020-37128297', tel)
+        
     def test_02(self):
         '''用户名登录'''
         self.main.input(
@@ -39,10 +36,7 @@ class login(unittest.TestCase):
         name = self.main.get_text(
             'xpath', '//*[@id="app"]/div[1]/div[3]/span[2]')
         self.driver.implicitly_wait(10)
-        try:
-            self.assertEqual('wsmall_679732130', name)
-        except AssertionError as e:
-            print(e)
+        self.assertEqual('wsmall_679732130', name)
 
     def test_03(self):
         '''退出登录'''
@@ -51,14 +45,8 @@ class login(unittest.TestCase):
         self.main.click_element(
             'xpath', '/html/body/div[2]/div/div[3]/button[2]')
         self.driver.implicitly_wait(10)
-
-        try:
-            self.assertEqual('MALL眼--数据报告', self.driver.title)
-        except AssertionError as e:
-            print(e)
-
+        self.assertEqual('MALL眼--数据报告', self.driver.title)
         time.sleep(1)
-
     
     def test_04(self):
         '''手机号登录'''
@@ -70,9 +58,4 @@ class login(unittest.TestCase):
             "xpath", "//*[@id='login']/div[2]/div[2]/div[4]")
         name = self.main.get_text(
             'xpath', '//*[@id="app"]/div[1]/div[3]/span[2]')
-
-        self.driver.implicitly_wait(10)
-        try:
-            self.assertEqual('wsmall_679732130', name)
-        except AssertionError as e:
-            print(e)
+        self.assertEqual('wsmall_679732130', name)
