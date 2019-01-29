@@ -7,35 +7,32 @@ from selenium import webdriver
 from mall_method import method
 
 
-class home(unittest.TestCase):
+class WinShang(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.driver = webdriver.Chrome()
-        self.url = "http://eye.winshangdata.com"
+        self.main = method(self.driver)
+        self.url = self.main.eye_url()
         self.driver.get(self.url)
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
-        self.main = method(self.driver)
 
     @classmethod
     def tearDownClass(self):
         self.driver.quit()
 
-    def test_01(self):
-        '''邮箱登录'''
+    def test(self):
+        '''登录'''
         self.main.input(
-            "xpath", "//*[@id='login']/div[2]/div[2]/div[2]/div/input", "317888988@qq.com")
+            "xpath", "//*[@id='login']/div[2]/div[2]/div[2]/div/input", self.main.username())
         self.main.input(
-            "xpath", "//*[@id='login']/div[2]/div[2]/div[3]/div/input", "ws2018")
+            "xpath", "//*[@id='login']/div[2]/div[2]/div[3]/div/input", self.main.password())
         self.main.click_element(
             "xpath", "//*[@id='login']/div[2]/div[2]/div[4]")
-        name = self.main.get_text(
-            'xpath', '//*[@id="app"]/div[1]/div[3]/span[2]')
         self.driver.implicitly_wait(10)
-        self.assertEqual('wsmall_679732130', name)
 
     def test_02(self):
-        """日报：验证日期是否是为两天前日期"""
+        """日报：日期是否为两天前日期"""
         now_time = datetime.datetime.now()
         change_time = now_time + datetime.timedelta(days=-2)
         change_time_format = change_time.strftime('%Y-%m-%d')
@@ -46,7 +43,7 @@ class home(unittest.TestCase):
         self.assertEqual(now_data_format, change_time_format)
 
     def test_03(self):
-        """日报：验证主项目和对比项数据不为0"""
+        """日报：主项目和对比项数据不为0"""
         for num in range(1, 5):
             a = '//*[@id="app"]/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[2]/div[' + \
                 str(num) + ']/ul/li[2]'
@@ -54,7 +51,7 @@ class home(unittest.TestCase):
             self.assertNotEqual('0', traffic)
 
     def test_04(self):
-        """日报：判断日消费基础画像数据不为0"""
+        """日报：日消费基础画像数据不为0"""
         for num in range(1, 7):
             a = '//*[@id="app"]/div[2]/div[1]/div[3]/div/div[1]/ul/li[' + \
                 str(num) + ']/div[2]'
@@ -90,10 +87,11 @@ class home(unittest.TestCase):
         self.driver.back()
 
     def test_07(self):
-        """切换周报：验证主项目和对比项数据不为0"""
+        """切换周报：主项目和对比项数据不为0"""
         self.main.click_element(
             'xpath', '//*[@id="app"]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div')
         self.driver.implicitly_wait(10)
+        time.sleep(1)
 
         for num in range(1, 5):
             a = '//*[@id="app"]/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[2]/div[' + \
@@ -102,7 +100,7 @@ class home(unittest.TestCase):
             self.assertNotEqual('0', traffic)
 
     def test_08(self):
-        """周报：验证主项目天气信息不为空"""
+        """周报：主项目天气信息不为空"""
         weather = self.main.get_text(
             'xpath', '//*[@id="app"]/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[3]/div[2]/div/div/div[2]/div[1]/div[1]/span[2]')
         weathers = ((','.join(weather)).split(',')[0])
@@ -114,7 +112,7 @@ class home(unittest.TestCase):
             print(weather)
 
     def test_09(self):
-        """周报：判断日消费基础画像数据不为0"""
+        """周报：日消费基础画像数据不为0"""
         for num in range(1, 7):
             a = '//*[@id="app"]/div[2]/div[1]/div[3]/div/div[1]/ul/li[' + \
                 str(num) + ']/div[2]'
@@ -122,7 +120,7 @@ class home(unittest.TestCase):
             self.assertNotEqual('0.00%', traffic)
 
     def test_10(self):
-        """切换月报：验证主项目和对比项数据不为0"""
+        """切换月报：主项目和对比项数据不为0"""
         self.main.click_element(
             'xpath', '//*[@id="app"]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div')
         self.driver.implicitly_wait(10)
@@ -134,7 +132,7 @@ class home(unittest.TestCase):
             self.assertNotEqual('0', traffic)
 
     def test_11(self):
-        """月报：判断日消费基础画像数据不为0"""
+        """月报：日消费基础画像数据不为0"""
         for num in range(1, 7):
             a = '//*[@id="app"]/div[2]/div[1]/div[3]/div/div[1]/ul/li[' + \
                 str(num) + ']/div[2]'
@@ -156,5 +154,5 @@ class home(unittest.TestCase):
                 print('Error:天气显示错误')
                 print(weather)
                 
-    if __name__ == "__main__":
-        unittest.main()
+if __name__ == "__main__":
+    unittest.main()

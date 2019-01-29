@@ -16,7 +16,7 @@ report_path = os.path.join(os.getcwd(), "./")
 
 def all_case():
     discover = unittest.defaultTestLoader.discover(
-        case_path, pattern="test*.py", top_level_dir=None)
+        case_path, pattern="test04*.py", top_level_dir=None)
     return discover
 
 
